@@ -1,4 +1,8 @@
 import { BilingualText, RoutePage, UserRole } from '../types/terratwin';
+import personaExplorerImg from '../assets/images/persona_explorer_1794655848976.jpg';
+import personaStudentImg from '../assets/images/persona_student_1794655851123.jpg';
+import personaScientistImg from '../assets/images/persona_scientist_1794655852902.jpg';
+import personaAstronautImg from '../assets/images/persona_astronaut_1794655850377.jpg';
 
 export interface PersonaCardDef {
   id: UserRole;
@@ -19,7 +23,7 @@ export const PERSONA_CARDS: PersonaCardDef[] = [
     description: { en: 'Discover and explore.', ar: 'اكتشف واستكشف.' },
     accentHex: '#2A9D9F',
     lightAccentHex: '#218385',
-    image: '/src/assets/images/persona_explorer_1794655848976.jpg',
+    image: personaExplorerImg,
     targetRoute: 'explorer-hub',
   },
   {
@@ -29,7 +33,7 @@ export const PERSONA_CARDS: PersonaCardDef[] = [
     description: { en: 'Learn and understand.', ar: 'تعلّم وافهم.' },
     accentHex: '#D9C5A3',
     lightAccentHex: '#9C7F50',
-    image: '/src/assets/images/persona_student_1794655851123.jpg',
+    image: personaStudentImg,
     targetRoute: 'student-hub',
   },
   {
@@ -39,7 +43,7 @@ export const PERSONA_CARDS: PersonaCardDef[] = [
     description: { en: 'Analyze and research.', ar: 'حلّل وابحث.' },
     accentHex: '#3B82F6',
     lightAccentHex: '#1D4ED8',
-    image: '/src/assets/images/persona_scientist_1794655852902.jpg',
+    image: personaScientistImg,
     targetRoute: 'scientist-hub',
   },
   {
@@ -49,7 +53,7 @@ export const PERSONA_CARDS: PersonaCardDef[] = [
     description: { en: 'Experience space exploration.', ar: 'عِش تجربة استكشاف الفضاء.' },
     accentHex: '#D96B43',
     lightAccentHex: '#B84A27',
-    image: '/src/assets/images/persona_astronaut_1794655850377.jpg',
+    image: personaAstronautImg,
     targetRoute: 'astronaut-hub',
   },
 ];

@@ -6,11 +6,21 @@ import {
   PlanetaryRegion,
   PlanetaryRegionId,
 } from '../types/terratwin';
+import heroEarthImg from '../assets/images/hero_planetary_earth_1794653803188.jpg';
+import moonMareImg from '../assets/images/moon_mare_surface_1794653805640.jpg';
+import marsJezeroImg from '../assets/images/mars_jezero_ridge_1794653804976.jpg';
+import analogAtacamaImg from '../assets/images/analog_atacama_desert_1794653805939.jpg';
+import analogAntarcticaImg from '../assets/images/analog_antarctica_valleys_1794653805708.jpg';
+import analogHaughtonImg from '../assets/images/analog_haughton_crater_1794653806549.jpg';
+import analogDeathValleyImg from '../assets/images/analog_death_valley_1794653807754.jpg';
+import analogIcelandImg from '../assets/images/analog_iceland_basalt_1794653807647.jpg';
+import analogHawaiiImg from '../assets/images/analog_hawaii_maunakea_1794653808859.jpg';
+import analogArcticImg from '../assets/images/analog_canadian_arctic_1794653809488.jpg';
 
 export const HERO_ASSETS = {
-  earthOrbit: '/src/assets/images/hero_planetary_earth_1794653803188.jpg',
-  moonSurface: '/src/assets/images/moon_mare_surface_1794653805640.jpg',
-  marsSurface: '/src/assets/images/mars_jezero_ridge_1794653804976.jpg',
+  earthOrbit: heroEarthImg,
+  moonSurface: moonMareImg,
+  marsSurface: marsJezeroImg,
 };
 
 export const PLANETARY_REGIONS: Record<PlanetaryRegionId, PlanetaryRegion> = {
@@ -409,7 +419,7 @@ export const EARTH_ANALOG_SITES: EarthAnalogSite[] = [
     coordinates: { lat: -24.095, lng: -69.92, label: '24.095° S, 69.920° W' },
     category: 'hyper-arid',
     primaryTwin: 'mars',
-    image: '/src/assets/images/analog_atacama_desert_1794653805939.jpg',
+    image: analogAtacamaImg,
     researchFocus: {
       en: 'Hyper-arid perchlorate soils, desiccation polygons & astrobiology detection limits',
       ar: 'التربة شديدة الجفاف الغنية بالبيركلورات والمضلعات الملحية وحدود الكشف عن الحياة',
@@ -498,7 +508,7 @@ export const EARTH_ANALOG_SITES: EarthAnalogSite[] = [
     coordinates: { lat: -77.833, lng: 160.65, label: '77.833° S, 160.650° E' },
     category: 'polar-cryogenic',
     primaryTwin: 'mars',
-    image: '/src/assets/images/analog_antarctica_valleys_1794653805708.jpg',
+    image: analogAntarcticaImg,
     researchFocus: {
       en: 'Sublimation permafrost polygons, cold hyper-arid soils & cryogenic preservation',
       ar: 'مضلعات التربة الصقيعية بالتسامي والتربة القطبية الجافة والحفظ المبرد',
@@ -587,7 +597,7 @@ export const EARTH_ANALOG_SITES: EarthAnalogSite[] = [
     coordinates: { lat: 75.383, lng: -89.667, label: '75.383° N, 89.667° W' },
     category: 'impact-crater',
     primaryTwin: 'both',
-    image: '/src/assets/images/analog_haughton_crater_1794653806549.jpg',
+    image: analogHaughtonImg,
     researchFocus: {
       en: 'Polar impact breccia morphology, gullies & human-rover field operations',
       ar: 'تشكل البريشيا التصادمية القطبية والأخاديد وتجارب تشغيل المركبات ورواد الفضاء',
@@ -676,7 +686,7 @@ export const EARTH_ANALOG_SITES: EarthAnalogSite[] = [
     coordinates: { lat: 36.25, lng: -116.826, label: '36.250° N, 116.826° W' },
     category: 'evaporite-playa',
     primaryTwin: 'mars',
-    image: '/src/assets/images/analog_death_valley_1794653807754.jpg',
+    image: analogDeathValleyImg,
     researchFocus: {
       en: 'Evaporite salt pans, alluvial fans & hydrovolcanic maar craters',
       ar: 'السبخات الملحية المتبخرة والمراوح الطميية والفوهات البركانية المائية',
@@ -765,7 +775,7 @@ export const EARTH_ANALOG_SITES: EarthAnalogSite[] = [
     coordinates: { lat: 65.03, lng: -16.75, label: '65.030° N, 16.750° W' },
     category: 'volcanic-basalt',
     primaryTwin: 'both',
-    image: '/src/assets/images/analog_iceland_basalt_1794653807647.jpg',
+    image: analogIcelandImg,
     researchFocus: {
       en: 'Basaltic tephra dunes, palagonite glaciovolcanism & braided outwash plains',
       ar: 'كثبان الرماد البازلتي والبركانية الجليدية وسهول الجريان المتشعبة',
@@ -854,7 +864,7 @@ export const EARTH_ANALOG_SITES: EarthAnalogSite[] = [
     coordinates: { lat: 19.821, lng: -155.468, label: '19.821° N, 155.468° W' },
     category: 'volcanic-basalt',
     primaryTwin: 'both',
-    image: '/src/assets/images/analog_hawaii_maunakea_1794653808859.jpg',
+    image: analogHawaiiImg,
     researchFocus: {
       en: 'High-altitude vesicular basalt regolith, oxidized cinder cones & lava tubes',
       ar: 'الحطام البازلتي المسامي على ارتفاعات شاهقة ومخاريط الرماد المؤكسدة وأنابيب الحمم',
@@ -943,7 +953,7 @@ export const EARTH_ANALOG_SITES: EarthAnalogSite[] = [
     coordinates: { lat: 79.42, lng: -90.75, label: '79.420° N, 90.750° W' },
     category: 'polar-cryogenic',
     primaryTwin: 'mars',
-    image: '/src/assets/images/analog_canadian_arctic_1794653809488.jpg',
+    image: analogArcticImg,
     researchFocus: {
       en: 'Perennial hypersaline cold springs, permafrost salt diapirs & cryobrine survival',
       ar: 'الينابيع الباردة شديدة الملوحة الدائمة وقباب الملح الصقيعية وبقاء الأحياء في المحاليل المتجمدة',
