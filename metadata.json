@@ -1,0 +1,6 @@
+{
+  "name": "TerraTwin",
+  "description": "Planetary analog observatory connecting Earth's extreme geological landscapes with the Moon and Mars.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

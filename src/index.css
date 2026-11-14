@@ -1,0 +1,306 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --tt-bg: #f7f8fa;
+  --tt-surface: #ffffff;
+  --tt-surface-elevated: #eef2f6;
+  --tt-border: rgba(16, 27, 43, 0.11);
+  --tt-text: #101b2b;
+  --tt-text-muted: #4a596c;
+  --tt-teal: #218385;
+  --tt-sand: #9c7f50;
+  --tt-mars: #b84a27;
+  --tt-moon: #526071;
+
+  --font-display: "Outfit", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-sans: "Manrope", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+.dark {
+  --tt-bg: #010205;
+  --tt-surface: #05080f;
+  --tt-surface-elevated: #090e1a;
+  --tt-border: rgba(47, 209, 211, 0.18);
+  --tt-text: #f5f7fa;
+  --tt-text-muted: #93a4bc;
+  --tt-teal: #2fd1d3;
+  --tt-sand: #e8d5b5;
+  --tt-mars: #e56e45;
+  --tt-moon: #e2e8f0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--tt-bg);
+  color: var(--tt-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[dir="rtl"] body {
+  font-family: "IBM Plex Sans Arabic", "Manrope", system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Balanced display headings to prevent isolated orphan words */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Deep-space void-black canvas with calibrated cosmic horizon luminescence */
+html.dark .space-void-backdrop {
+  background-color: #010205;
+  background-image:
+    radial-gradient(ellipse 80% 42% at 50% -6%, rgba(47, 209, 211, 0.11), transparent 64%),
+    radial-gradient(ellipse 52% 34% at 88% 14%, rgba(59, 130, 246, 0.06), transparent 60%),
+    radial-gradient(ellipse 46% 38% at 10% 82%, rgba(229, 110, 69, 0.05), transparent 65%);
+}
+
+html.dark .space-void-stars {
+  overflow: hidden;
+  contain: strict;
+}
+
+html.dark .space-void-stars::before,
+html.dark .space-void-stars::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Distant slow starfield layer (480x480 seamless tile) */
+html.dark .space-void-stars::before {
+  width: calc(100% + 480px);
+  height: calc(100% + 480px);
+  background-image:
+    radial-gradient(1px 1px at 8% 14%, rgba(245, 247, 250, 0.52), transparent),
+    radial-gradient(1px 1px at 22% 38%, rgba(232, 213, 181, 0.36), transparent),
+    radial-gradient(1.5px 1.5px at 39% 9%, rgba(245, 247, 250, 0.45), transparent),
+    radial-gradient(1px 1px at 54% 26%, rgba(47, 209, 211, 0.48), transparent),
+    radial-gradient(1px 1px at 69% 16%, rgba(245, 247, 250, 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 86% 44%, rgba(232, 213, 181, 0.32), transparent),
+    radial-gradient(1px 1px at 14% 72%, rgba(245, 247, 250, 0.38), transparent),
+    radial-gradient(1px 1px at 47% 81%, rgba(232, 213, 181, 0.34), transparent),
+    radial-gradient(1px 1px at 73% 66%, rgba(47, 209, 211, 0.34), transparent),
+    radial-gradient(1px 1px at 93% 88%, rgba(245, 247, 250, 0.4), transparent),
+    radial-gradient(1px 1px at 31% 92%, rgba(245, 247, 250, 0.28), transparent);
+  background-size: 480px 480px;
+  animation: space-drift-far 180s linear infinite;
+}
+
+/* Mid-depth parallax starfield layer (420x280 seamless tile at subtle angle) */
+html.dark .space-void-stars::after {
+  width: calc(100% + 420px);
+  height: calc(100% + 280px);
+  background-image:
+    radial-gradient(1.5px 1.5px at 15% 22%, rgba(245, 247, 250, 0.42), transparent),
+    radial-gradient(1px 1px at 34% 64%, rgba(47, 209, 211, 0.38), transparent),
+    radial-gradient(1.5px 1.5px at 61% 31%, rgba(232, 213, 181, 0.35), transparent),
+    radial-gradient(1px 1px at 79% 77%, rgba(245, 247, 250, 0.44), transparent),
+    radial-gradient(1px 1px at 91% 18%, rgba(245, 247, 250, 0.32), transparent);
+  background-size: 420px 280px;
+  animation: space-drift-near 115s linear infinite;
+}
+
+@keyframes space-drift-far {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-480px, -480px, 0);
+  }
+}
+
+@keyframes space-drift-near {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-420px, -280px, 0);
+  }
+}
+
+/* Subtle terminal scanline & telemetry sweep overlay in dark mode */
+html.dark .space-scanline-overlay {
+  overflow: hidden;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(47, 209, 211, 0.026) 0px,
+    rgba(47, 209, 211, 0.026) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+html.dark .space-scanline-overlay::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -18vh;
+  height: 18vh;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(47, 209, 211, 0.032) 55%,
+    rgba(82, 229, 231, 0.055) 95%,
+    transparent 100%
+  );
+  will-change: transform;
+  animation: space-scanline-sweep 14s linear infinite;
+}
+
+@keyframes space-scanline-sweep {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 136vh, 0);
+  }
+}
+
+/* High-contrast glowing cyan accent pulse for active console buttons */
+@keyframes console-cyan-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 18px -4px rgba(47, 209, 211, 0.55),
+      0 0 0 1px rgba(47, 209, 211, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 30px -1px rgba(56, 214, 216, 0.88),
+      0 0 0 1px rgba(103, 240, 242, 0.85),
+      inset 0 1px 0 rgba(255, 255, 255, 0.32);
+  }
+}
+
+html.dark .console-active-cyan {
+  animation: console-cyan-pulse 3s ease-in-out infinite;
+}
+
+/* Faint orbital instrument coordinate grid in dark mode */
+html.dark .space-console-grid {
+  background-image:
+    linear-gradient(to right, rgba(47, 209, 211, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(47, 209, 211, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Custom void-black obsidian scrollbar */
+html.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #010205;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #141c2c;
+  border-radius: 9999px;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #23334e;
+}
+
+/* Custom Leaflet observatory refinements */
+.leaflet-container {
+  direction: ltr;
+  font-family: var(--font-sans);
+  background: #05080f;
+}
+
+.leaflet-container img {
+  max-width: none !important;
+}
+
+.leaflet-tooltip {
+  direction: auto;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 4px 10px;
+}
+
+html.dark .leaflet-tooltip {
+  background: rgba(5, 8, 15, 0.94);
+  color: #f5f7fa;
+  border: 1px solid rgba(47, 209, 211, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+html.dark .leaflet-tooltip-top::before {
+  border-top-color: rgba(47, 209, 211, 0.35);
+}
+
+html.dark .leaflet-bar a {
+  background-color: #090e1a;
+  color: #f5f7fa;
+  border-color: rgba(47, 209, 211, 0.24);
+}
+
+html.dark .leaflet-bar a:hover {
+  background-color: #111b2e;
+  color: #38d6d8;
+}
+
+/* Crisp deep-space tactical rendering for standard basemap in dark mode */
+html.dark .tt-map-dark-filter .leaflet-tile-pane {
+  filter: invert(93%) hue-rotate(180deg) brightness(92%) contrast(94%) saturate(65%);
+}
+
+html:not(.dark) .leaflet-container {
+  background: #e6ebf1;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px !important;
+  opacity: 0.78;
+  background: rgba(1, 2, 5, 0.85) !important;
+  color: #cbd5e1 !important;
+  padding: 2px 6px !important;
+}
+
+html:not(.dark) .leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #4a596c !important;
+}
+
+.leaflet-control-attribution a {
+  color: inherit !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.dark .space-void-stars::before,
+  html.dark .space-void-stars::after,
+  html.dark .space-scanline-overlay::after,
+  html.dark .console-active-cyan {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
